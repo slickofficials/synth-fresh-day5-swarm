@@ -1,13 +1,17 @@
-# .github/workflows/ci.yml
 name: CI
-on: [push]
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: 3.11
-      - run: pip install -r requirements.txt
-      - run: python -m pytest
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest  # Ensure pytest
+      - name: Run tests
+        run: pytest test_application.py -v  # Verbose, your test file
