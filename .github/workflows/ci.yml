@@ -12,6 +12,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install pytest
+          pip install pytest  # Explicit for CI
       - name: Run tests
         run: pytest test_application.py -v
