@@ -1,5 +1,7 @@
 # Legacy to Lambda Swarm: COBOL → Flask Microservice (5-Day Evo)
 
+![CI](https://github.com/slickofficials/synth-fresh-day5-swarm/workflows/CI/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-89%25-brightgreen)
 Transformed a legacy COBOL loop (`PERFORM VARYING I FROM 1 UNTIL I > 10 ADD 1 TO COUNTER`) into a scalable Flask swarm on AWS Beanstalk. 98% RLHF-aligned, SymPy-proofed for safe convergence (<3 iters, k=0.4).
 
 ## Features
