@@ -12,6 +12,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install pytest  # Ensure pytest
+          pip install pytest
       - name: Run tests
-        run: pytest test_application.py -v  # Verbose, your test file
+        run: pytest test_application.py -v
