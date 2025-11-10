@@ -1,5 +1,8 @@
 import pytest
-from application import app, service  # Your swarm from application.py
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # Fix CI path
+from application import app
 
 @pytest.fixture
 def client():
@@ -21,4 +24,4 @@ def test_increment(client):
 def test_metrics(client):
     rv = client.get('/metrics')
     assert rv.status_code == 200
-    assert 'counter_requests_total' in rv.text  # Prometheus text
+    assert 'counter_requests_total' in rv.text
